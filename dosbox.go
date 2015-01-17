@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dosbox/system"
+	"github.com/jpartogi/dosboxgo/system"
 )
 
 func main() {
