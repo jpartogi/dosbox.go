@@ -4,11 +4,11 @@ import (
 	"errors"
 )
 
-type CmdMkFile struct {
+type CmdCd struct {
 	Command
 }
 
-func (c CmdMkFile) CheckParams(Params []string) error {
+func (c CmdCd) CheckParams(Params []string) error {
 	var err error
 
 	if err := c.CheckNumberOfParams(Params); err != nil {
@@ -22,15 +22,15 @@ func (c CmdMkFile) CheckParams(Params []string) error {
 	return err
 }
 
-func (c CmdMkFile) GetName() string {
+func (c CmdCd) GetName() string {
 	return c.Name
 }
 
-func (c CmdMkFile) Execute(Params []string) {
+func (c CmdCd) Execute(Params []string) {
 	c.Outputter.Println("Executing " + c.Name)
 }
 
-func (c CmdMkFile) CheckNumberOfParams(Params []string) error {
+func (c CmdCd) CheckNumberOfParams(Params []string) error {
 	var err error
 
 	if len(Params) < 1 {
@@ -40,7 +40,7 @@ func (c CmdMkFile) CheckNumberOfParams(Params []string) error {
 	return err
 }
 
-func (c CmdMkFile) CheckParamValues(Params []string) error {
+func (c CmdCd) CheckParamValues(Params []string) error {
 	var err error
 
 	return err

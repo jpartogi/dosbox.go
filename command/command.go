@@ -13,13 +13,16 @@ type Command struct {
 
 type ICommand interface {
 	GetName() string
-	Execute()
-	CheckParams() bool
+	Execute(Params []string)
+	CheckParams(Params []string) error
 }
 
 func Factory(Drive filesystem.Drive, Outputter console.Outputter) []ICommand {
 	var commands []ICommand
 
+	// Add your commands here
+	commands = append(commands, CmdCd{Command{"cd", Drive, Outputter}})
+	commands = append(commands, CmdDir{Command{"dir", Drive, Outputter}})
 	commands = append(commands, CmdMkDir{Command{"mkdir", Drive, Outputter}})
 	commands = append(commands, CmdMkFile{Command{"mkfile", Drive, Outputter}})
 

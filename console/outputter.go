@@ -10,6 +10,10 @@ func NewOutputter() Outputter {
 	return Outputter{0}
 }
 
+func (o *Outputter) NewLine() {
+	fmt.Println()
+}
+
 func (o *Outputter) Println(line string) {
 	fmt.Println(line)
 }

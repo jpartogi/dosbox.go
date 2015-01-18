@@ -27,7 +27,9 @@ func (p *Processor) ProcessInput() {
 	reader := bufio.NewReader(os.Stdin)
 
 	for strings.ToLower(line) != "exit" {
+		p.Outputter.NewLine()
 		fmt.Print("C:\\>")
+
 		text, _ := reader.ReadString('\n')
 		line = strings.TrimSpace(text)
 
